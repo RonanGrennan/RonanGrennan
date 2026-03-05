@@ -6,6 +6,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 <meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io; frame-src https://www.google.com/recaptcha/;">
 <title>Merty MGMT</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
 <script src="https://www.google.com/recaptcha/api.js?render=6Lfoaf4eAAAAABc_NWOnklvxNkScj37EQQFzgC2J"></script>
@@ -311,20 +312,6 @@
     margin: 0;
     line-height: 1.8;
   }
-  .ticker-split-line {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    width: 100%;
-    font-family: var(--font-display);
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    line-height: 1.8;
-  }
-  .ticker-split-line .ticker-plain:first-child { text-align: right; padding-right: 8px; }
-  .ticker-split-line .ticker-plain:last-child  { text-align: left;  padding-left: 8px; }
-  .ticker-split-line .ticker-sep { text-align: center; }
 
   .ticker-flair {
     color: var(--gold);
@@ -1245,17 +1232,18 @@
     </div>
     <!-- Mobile: three lines, plain centered text -->
     <div class="ticker-mobile">
-      <div class="ticker-split-line">
+      <p style="text-align:center;">
         <span class="ticker-plain">KFC</span>
         <span class="ticker-sep">●</span>
         <span class="ticker-plain">TikTok</span>
-      </div>
-      <p><span class="ticker-flair">✦</span> <span class="ticker-trusted">Trusted by Industry Leaders</span> <span class="ticker-flair">✦</span></p>
-      <div class="ticker-split-line">
+        <span class="ticker-sep">●</span>
         <span class="ticker-plain">Stake</span>
         <span class="ticker-sep">●</span>
         <span class="ticker-plain">Fashion Nova</span>
-      </div>
+      </p>
+      <p style="text-align:center;margin-top:8px;">
+        <span class="ticker-flair">✦</span> <span class="ticker-trusted">Trusted by Industry Leaders</span> <span class="ticker-flair">✦</span>
+      </p>
     </div>
   </div>
 </div>
@@ -1351,7 +1339,7 @@
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="john@company.com" required maxlength="254">
+        <input type="email" id="email" name="email" placeholder="john@company.com" required minlength="6" maxlength="254">
       </div>
       <div class="form-group">
         <label for="message">Message</label>
