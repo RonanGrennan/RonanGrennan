@@ -257,42 +257,45 @@
     background: var(--off-black);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    overflow: hidden;
-    position: relative;
   }
 
-  .ticker-track {
+  .clients-ticker-static {
     display: flex;
-    gap: 80px;
     align-items: center;
-    animation: ticker 18s linear infinite;
-    width: max-content;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
   }
 
-  .ticker-item {
+  .ticker-plain {
     font-family: var(--font-display);
     font-size: 1.1rem;
     letter-spacing: 0.3em;
-    color: var(--muted);
-    white-space: nowrap;
-    transition: color 0.3s;
+    color: var(--white);
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  .ticker-item:hover { color: var(--gold); }
-
-  .ticker-dot {
+  .ticker-trusted {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
     color: var(--gold);
-    font-size: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .ticker-sep {
+    color: var(--gold);
+    font-size: 0.45rem;
     opacity: 0.5;
   }
 
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+  .ticker-flair {
+    color: var(--gold);
+    font-size: 0.85rem;
+    opacity: 0.7;
   }
 
   /* ── SECTIONS ── */
@@ -445,7 +448,7 @@
     font-family: var(--font-display);
     font-size: 1.6rem;
     letter-spacing: 0.12em;
-    color: var(--muted);
+    color: var(--white);
     transition: color 0.3s;
     text-align: center;
   }
@@ -985,7 +988,7 @@
           <rect x="276" y="352" width="44" height="4" rx="2" fill="#2a2840"/>
           <circle class="ping-ring" cx="355" cy="147" r="9" stroke="#c8a96e" stroke-width="1.8" fill="none" opacity=".55"/>
           <circle class="ping-dot"  cx="355" cy="147" r="7" fill="#c8a96e"/>
-          <text x="355" y="151" text-anchor="middle" font-size="7" fill="#0a0812" font-family="sans-serif" font-weight="bold">9+</text>
+          <text x="355" y="147" text-anchor="middle" dominant-baseline="central" font-size="7" fill="#0a0812" font-family="sans-serif" font-weight="bold">9+</text>
         </g>
 
         <!-- PHONE 1: Instagram feed  100x217 (ratio 1:2.17) -->
@@ -1159,32 +1162,18 @@
 
 <!-- CLIENTS TICKER -->
 <div class="clients-ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">KFC</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Fashion Nova</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">TikTok</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Stake</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Netflix</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Trusted by Industry Leaders</span>
-    <span class="ticker-dot">●</span>
-    <!-- duplicate for seamless loop -->
-    <span class="ticker-item">KFC</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Fashion Nova</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">TikTok</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Stake</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Netflix</span>
-    <span class="ticker-dot">●</span>
-    <span class="ticker-item">Trusted by Industry Leaders</span>
-    <span class="ticker-dot">●</span>
+  <div class="clients-ticker-static">
+    <span class="ticker-flair">✦</span>
+    <span class="ticker-plain">KFC</span>
+    <span class="ticker-sep">●</span>
+    <span class="ticker-plain">Netflix</span>
+    <span class="ticker-sep">●</span>
+    <span class="ticker-trusted">Trusted by Industry Leaders</span>
+    <span class="ticker-sep">●</span>
+    <span class="ticker-plain">Stake</span>
+    <span class="ticker-sep">●</span>
+    <span class="ticker-plain">Fashion Nova</span>
+    <span class="ticker-flair">✦</span>
   </div>
 </div>
 
@@ -1356,6 +1345,7 @@
     }
     setTimeout(tick, 1000);
   })();
+
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => {
