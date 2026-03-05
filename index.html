@@ -298,16 +298,15 @@
     gap: 18px;
   }
   .ticker-mobile { display: none; }
-  .ticker-mobile-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 260px;
-  }
-  .ticker-mobile-row.ticker-row-sides .ticker-plain {
-    width: 100px;
+  .ticker-mobile p {
     text-align: center;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--white);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.8;
   }
 
   .ticker-flair {
@@ -775,11 +774,9 @@
     .client-logo-text { font-size: 1.2rem; }
 
     /* Ticker static — mobile layout */
-    .clients-ticker-static { flex-direction: column; gap: 10px; padding: 0; align-items: center; }
+    .clients-ticker-static { padding: 0 20px; }
     .ticker-desktop { display: none; }
-    .ticker-mobile { display: flex; flex-direction: column; gap: 10px; align-items: center; }
-    .ticker-mobile-row { width: 260px; }
-    .ticker-mobile-row.ticker-row-sides { width: 260px; }
+    .ticker-mobile { display: block; width: 100%; }
     .ticker-plain, .ticker-sep, .ticker-trusted { font-size: 0.85rem; }
 
     /* Contact */
@@ -1220,23 +1217,11 @@
       <span class="ticker-plain">Fashion Nova</span>
       <span class="ticker-flair">✦</span>
     </div>
-    <!-- Mobile: three rows -->
+    <!-- Mobile: three lines, plain centered text -->
     <div class="ticker-mobile">
-      <div class="ticker-mobile-row ticker-row-sides">
-        <span class="ticker-plain">KFC</span>
-        <span class="ticker-sep">●</span>
-        <span class="ticker-plain">TikTok</span>
-      </div>
-      <div class="ticker-mobile-row ticker-row-center">
-        <span class="ticker-flair">✦</span>
-        <span class="ticker-trusted">Trusted by Industry Leaders</span>
-        <span class="ticker-flair">✦</span>
-      </div>
-      <div class="ticker-mobile-row ticker-row-sides">
-        <span class="ticker-plain">Stake</span>
-        <span class="ticker-sep">●</span>
-        <span class="ticker-plain">Fashion Nova</span>
-      </div>
+      <p>KFC <span class="ticker-sep">●</span> TikTok</p>
+      <p><span class="ticker-flair">✦</span> <span class="ticker-trusted">Trusted by Industry Leaders</span> <span class="ticker-flair">✦</span></p>
+      <p>Stake <span class="ticker-sep">●</span> Fashion Nova</p>
     </div>
   </div>
 </div>
