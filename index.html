@@ -698,9 +698,19 @@
       display: flex;
       min-height: 320px;
       width: 100%;
+      max-width: 100%;
+      overflow: hidden;
     }
     .hero-visual {
       min-height: 320px;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .hero-visual svg {
+      min-width: unset !important;
+      min-height: unset !important;
+      width: 100% !important;
+      height: 100% !important;
     }
     .hero-sub { max-width: 100%; margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; flex-wrap: wrap; }
@@ -708,6 +718,8 @@
 
     /* Services */
     .services-header { grid-template-columns: 1fr; gap: 28px; }
+    .services-desc { max-width: 100%; font-size: 0.95rem; }
+    .section-title { font-size: clamp(2rem, 9vw, 3.5rem); }
     .services-grid { grid-template-columns: 1fr; }
 
     /* Clients */
@@ -728,6 +740,8 @@
     .hero-title { font-size: clamp(2.8rem, 16vw, 4.5rem); }
     .hero-right { min-height: 260px; }
     .hero-visual { min-height: 260px; }
+    .section-title { font-size: clamp(1.8rem, 10vw, 3rem); }
+    .services-desc { font-size: 0.9rem; }
     .clients-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .btn-primary { padding: 13px 28px; font-size: 0.75rem; }
   }
