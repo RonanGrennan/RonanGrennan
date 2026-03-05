@@ -292,12 +292,18 @@
     opacity: 0.5;
   }
 
-  .ticker-row-1 {
+  .ticker-desktop {
     display: flex;
     align-items: center;
     gap: 18px;
   }
-  .ticker-row-2, .ticker-row-3 { display: none; }
+  .ticker-mobile { display: none; }
+  .ticker-mobile-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
 
   .ticker-flair {
     color: var(--gold);
@@ -672,7 +678,21 @@
     justify-content: center;
     gap: 40px;
   }
-  .mobile-menu.open { display: flex; }
+  .mobile-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 8px;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  .mobile-close:hover { opacity: 1; }
   .mobile-menu a {
     color: var(--white);
     text-decoration: none;
@@ -751,8 +771,8 @@
 
     /* Ticker static — mobile layout */
     .clients-ticker-static { flex-direction: column; gap: 10px; padding: 0 20px; }
-    .ticker-row-1 { display: none; }
-    .ticker-row-2, .ticker-row-3 { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .ticker-desktop { display: none; }
+    .ticker-mobile { display: flex; flex-direction: column; gap: 10px; align-items: center; }
     .ticker-plain, .ticker-sep, .ticker-trusted { font-size: 0.85rem; }
 
     /* Contact */
@@ -796,6 +816,7 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#10005;</button>
   <a href="#services" class="mobile-link">Services</a>
   <a href="#clients" class="mobile-link">Clients</a>
   <a href="#contact" class="mobile-link">Contact</a>
@@ -1178,28 +1199,38 @@
 <!-- CLIENTS TICKER -->
 <div class="clients-ticker">
   <div class="clients-ticker-static">
-    <div class="ticker-row-1">
+    <!-- Desktop: single row -->
+    <div class="ticker-desktop">
       <span class="ticker-flair">✦</span>
       <span class="ticker-plain">KFC</span>
       <span class="ticker-sep">●</span>
-      <span class="ticker-plain">Netflix</span>
-      <span class="ticker-sep ticker-hide-mobile">●</span>
-      <span class="ticker-trusted ticker-hide-mobile">Trusted by Industry Leaders</span>
-      <span class="ticker-sep ticker-hide-mobile">●</span>
-      <span class="ticker-plain ticker-hide-mobile">Stake</span>
-      <span class="ticker-sep ticker-hide-mobile">●</span>
-      <span class="ticker-plain ticker-hide-mobile">Fashion Nova</span>
-      <span class="ticker-flair">✦</span>
-    </div>
-    <div class="ticker-row-2">
-      <span class="ticker-flair">✦</span>
+      <span class="ticker-plain">TikTok</span>
+      <span class="ticker-sep">●</span>
       <span class="ticker-trusted">Trusted by Industry Leaders</span>
-      <span class="ticker-flair">✦</span>
-    </div>
-    <div class="ticker-row-3">
+      <span class="ticker-sep">●</span>
       <span class="ticker-plain">Stake</span>
       <span class="ticker-sep">●</span>
       <span class="ticker-plain">Fashion Nova</span>
+      <span class="ticker-flair">✦</span>
+    </div>
+    <!-- Mobile: three rows -->
+    <div class="ticker-mobile">
+      <div class="ticker-mobile-row">
+        <span class="ticker-plain">KFC</span>
+        <span class="ticker-sep">●</span>
+        <span class="ticker-plain">TikTok</span>
+        
+      </div>
+      <div class="ticker-mobile-row">
+        <span class="ticker-flair">✦</span>
+        <span class="ticker-trusted">Trusted by Industry Leaders</span>
+        <span class="ticker-flair">✦</span>
+      </div>
+      <div class="ticker-mobile-row">
+        <span class="ticker-plain">Stake</span>
+        <span class="ticker-sep">●</span>
+        <span class="ticker-plain">Fashion Nova</span>
+      </div>
     </div>
   </div>
 </div>
@@ -1255,7 +1286,7 @@
       <span class="client-logo-text">Fashion Nova</span>
     </div>
     <div class="client-logo-box">
-      <img src="images/client-tiktok.png" alt="TikTok" style="width:90px;height:90px;object-fit:contain;margin-bottom:16px;border-radius:50%;">
+      <img src="images/client-tiktok.png" alt="TikTok" style="width:90px;height:90px;object-fit:contain;margin-bottom:16px;">
       <span class="client-logo-text">TikTok</span>
     </div>
     <div class="client-logo-box">
@@ -1375,15 +1406,20 @@
 
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
   });
+  mobileClose.addEventListener('click', closeMenu);
   document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    });
+    link.addEventListener('click', closeMenu);
   });
 </script>
 </body>
