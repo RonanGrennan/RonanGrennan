@@ -308,6 +308,20 @@
     margin: 0;
     line-height: 1.8;
   }
+  .ticker-split-line {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .ticker-split-line .ticker-plain:first-child { text-align: right; padding-right: 8px; }
+  .ticker-split-line .ticker-plain:last-child  { text-align: left;  padding-left: 8px; }
+  .ticker-split-line .ticker-sep { text-align: center; }
 
   .ticker-flair {
     color: var(--gold);
@@ -774,7 +788,7 @@
     .client-logo-text { font-size: 1.2rem; }
 
     /* Ticker static — mobile layout */
-    .clients-ticker-static { padding: 0 20px; }
+    .clients-ticker-static { padding: 0; }
     .ticker-desktop { display: none; }
     .ticker-mobile { display: block; width: 100%; }
     .ticker-plain, .ticker-sep, .ticker-trusted { font-size: 0.85rem; }
@@ -1219,9 +1233,17 @@
     </div>
     <!-- Mobile: three lines, plain centered text -->
     <div class="ticker-mobile">
-      <p>KFC <span class="ticker-sep">●</span> TikTok</p>
+      <div class="ticker-split-line">
+        <span class="ticker-plain">KFC</span>
+        <span class="ticker-sep">●</span>
+        <span class="ticker-plain">TikTok</span>
+      </div>
       <p><span class="ticker-flair">✦</span> <span class="ticker-trusted">Trusted by Industry Leaders</span> <span class="ticker-flair">✦</span></p>
-      <p>Stake <span class="ticker-sep">●</span> Fashion Nova</p>
+      <div class="ticker-split-line">
+        <span class="ticker-plain">Stake</span>
+        <span class="ticker-sep">●</span>
+        <span class="ticker-plain">Fashion Nova</span>
+      </div>
     </div>
   </div>
 </div>
