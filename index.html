@@ -701,16 +701,16 @@
       align-items: center;
       min-height: 320px;
       width: 100%;
-      max-width: 100%;
       overflow: visible;
     }
     .hero-visual {
       min-height: unset;
-      width: 85vw;
-      max-width: 400px;
+      width: 80vw;
+      max-width: 380px;
       height: auto;
       aspect-ratio: 1;
       overflow: visible;
+      margin: 0 auto;
     }
     .hero-visual svg {
       min-width: unset !important;
@@ -718,6 +718,8 @@
       width: 100% !important;
       height: 100% !important;
       overflow: visible !important;
+      display: block;
+      margin: 0 auto;
     }
     .hero-sub { max-width: 100%; margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; flex-wrap: wrap; }
@@ -802,7 +804,7 @@
 
   <div class="hero-right">
     <div class="hero-visual">
-      <svg viewBox="-30 20 480 480" xmlns="http://www.w3.org/2000/svg" overflow="visible" style="width:100%;height:100%;">
+      <svg viewBox="-15 25 460 460" xmlns="http://www.w3.org/2000/svg" overflow="visible" style="width:100%;height:100%;display:block;margin:0 auto;">
         <defs>
           <!-- Phone screen clip paths (body = phone outer, screen = inner display) -->
           <!-- Phone 2 centre: body x=238,y=98,w=120,h=260  screen x=242,y=108,w=112,h=242 -->
