@@ -299,20 +299,17 @@
   }
   .ticker-mobile { display: none; }
   .ticker-mobile-row {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    justify-items: center;
-    gap: 12px;
-    width: 220px;
-  }
-  .ticker-mobile-row .ticker-plain:first-child { justify-self: end; }
-  .ticker-mobile-row .ticker-plain:last-child { justify-self: start; }
-  .ticker-mobile-row.ticker-row-center {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 12px;
-    width: auto;
+  }
+  .ticker-mobile-row.ticker-row-center {
+    gap: 12px;
+  }
+  .ticker-mobile-row:not(.ticker-row-center) .ticker-plain {
+    min-width: 90px;
+    text-align: center;
   }
 
   .ticker-flair {
@@ -1232,6 +1229,7 @@
         
       </div>
       <div class="ticker-mobile-row ticker-row-center">
+        <span class="ticker-flair">✦</span>
         <span class="ticker-trusted">Trusted by Industry Leaders</span>
         <span class="ticker-flair">✦</span>
       </div>
