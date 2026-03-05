@@ -1512,8 +1512,9 @@
         'Content-Type': 'application/json'
       }
     })
-    .then(res => {
-      if (res.ok) {
+    .then(res => res.json().then(data => ({ ok: res.ok, status: res.status, data })))
+    .then(({ ok, status, data }) => {
+      if (ok) {
         btn.textContent = 'Sent ✓';
         btn.style.background = '#2a7a5a';
         btn.style.color = '#fff';
@@ -1527,15 +1528,16 @@
           btn.style.cursor = '';
         }, 3000);
       } else {
-        throw new Error('Server error');
+        const errMsg = (data && data.error) ? data.error : ('Error ' + status + ': ' + JSON.stringify(data));
+        throw new Error(errMsg);
       }
     })
-    .catch(() => {
+    .catch(err => {
       btn.disabled = false;
       btn.textContent = 'Submit';
       btn.style.opacity = '1';
       btn.style.cursor = '';
-      showModal(['Something went wrong. Please try again or email us directly at contact@merty.biz']);
+      showModal(['Formspree error: ' + err.message + ' — contact us directly at contact@merty.biz']);
     });
   }
 
