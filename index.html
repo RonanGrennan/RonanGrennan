@@ -292,6 +292,13 @@
     opacity: 0.5;
   }
 
+  .ticker-row-1 {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .ticker-row-2, .ticker-row-3 { display: none; }
+
   .ticker-flair {
     color: var(--gold);
     font-size: 0.85rem;
@@ -738,7 +745,15 @@
     .services-grid { grid-template-columns: 1fr; }
 
     /* Clients */
-    .clients-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .clients-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+    .client-logo-box { padding: 32px 20px; align-items: center; justify-content: center; }
+    .client-logo-text { font-size: 1.2rem; }
+
+    /* Ticker static — mobile layout */
+    .clients-ticker-static { flex-direction: column; gap: 10px; padding: 0 20px; }
+    .ticker-row-1 { display: none; }
+    .ticker-row-2, .ticker-row-3 { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .ticker-plain, .ticker-sep, .ticker-trusted { font-size: 0.85rem; }
 
     /* Contact */
     .contact-inner { grid-template-columns: 1fr; gap: 36px; }
@@ -757,7 +772,7 @@
     .hero-visual { min-height: 260px; }
     .section-title { font-size: clamp(1.8rem, 10vw, 3rem); }
     .services-desc { font-size: 0.9rem; }
-    .clients-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .clients-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
     .btn-primary { padding: 13px 28px; font-size: 0.75rem; }
   }
 </style>
@@ -1163,17 +1178,29 @@
 <!-- CLIENTS TICKER -->
 <div class="clients-ticker">
   <div class="clients-ticker-static">
-    <span class="ticker-flair">✦</span>
-    <span class="ticker-plain">KFC</span>
-    <span class="ticker-sep">●</span>
-    <span class="ticker-plain">Netflix</span>
-    <span class="ticker-sep">●</span>
-    <span class="ticker-trusted">Trusted by Industry Leaders</span>
-    <span class="ticker-sep">●</span>
-    <span class="ticker-plain">Stake</span>
-    <span class="ticker-sep">●</span>
-    <span class="ticker-plain">Fashion Nova</span>
-    <span class="ticker-flair">✦</span>
+    <div class="ticker-row-1">
+      <span class="ticker-flair">✦</span>
+      <span class="ticker-plain">KFC</span>
+      <span class="ticker-sep">●</span>
+      <span class="ticker-plain">Netflix</span>
+      <span class="ticker-sep ticker-hide-mobile">●</span>
+      <span class="ticker-trusted ticker-hide-mobile">Trusted by Industry Leaders</span>
+      <span class="ticker-sep ticker-hide-mobile">●</span>
+      <span class="ticker-plain ticker-hide-mobile">Stake</span>
+      <span class="ticker-sep ticker-hide-mobile">●</span>
+      <span class="ticker-plain ticker-hide-mobile">Fashion Nova</span>
+      <span class="ticker-flair">✦</span>
+    </div>
+    <div class="ticker-row-2">
+      <span class="ticker-flair">✦</span>
+      <span class="ticker-trusted">Trusted by Industry Leaders</span>
+      <span class="ticker-flair">✦</span>
+    </div>
+    <div class="ticker-row-3">
+      <span class="ticker-plain">Stake</span>
+      <span class="ticker-sep">●</span>
+      <span class="ticker-plain">Fashion Nova</span>
+    </div>
   </div>
 </div>
 
