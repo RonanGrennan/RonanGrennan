@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta name="referrer" content="no-referrer">
 <title>Merty MGMT</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAM9klEQVR4nO1ab2wc1Xb/nTuzOzP73ziJFZsmUahFpRej+hkq5YWKEHjQPgjpS2o3UCKhSjVIlYpaCT1VfFinUj8hqvKJ8q0hL43kPCtSgoIUeA0NOA7pmhcECGSZNE+J/8dr7653dmdn5p5+2JnNer1rr1/bl0L3J11pPXPn3HN/59xzzz3XQAsttNBCCy200EIL/z9Bv+mHzCwAKOPj4+v26+vrAwBJRO4mZJMne0P9+vr6mIicZmXfM3iT+j8HdbMfMLMgIjkxMXGwq6urP5/PuwCU2n5SSgCQ4XBYzMzMXCGif/a/XUc2ERGnUqktXV1dfx8IBCJSSgZAnjwIIXzZrGka5fP5pddff/1nJ06cKKLs0bzZOW0KzEzJZFJkMplr3CTm5ubmLl26lGBmWs8TmFkBgLm5uZealc3MfP369WeZmYaHh9cYYiNsygN8C3755ZePhEKhXgA2AEgpiXkt8YqiIJPJuLqub925c+dBIjrpTbJRPJAAYBjGMQCOlLLiXbXyiQi2bbtSSrWjo+N5Inqvng4bQfwm/Ts6Oo6qqqp6Ew8QkVqvAVBzuZwaCAQoGAy+VD3JWnjk8ldffdVrGMY+lCcebCRXCKHm83ktm80qgUDgJxcuXLifiNzNxpqmCfDWp3PhwoVYKBQ65D1r6HJEhGKxCMuyRLFY5Egk8qNPP/3094mIG7gqAcDWrVsHVFXVpJQuEVG1vOrfzIxcLgdmduPxeOKBBx44CgAfffTRppbBZjxAAEB3d/fToVBoNwAphKirIDODiJDJZKAoChGRG4lE9M7Ozhe8Sa6ykkeu++6774bD4XB/I938MYQQKBQKsCwLgUCAHMdBPB4f6O/vD+7fv9/Ff2N7bwjP2pROp0eYWTqO40gpubq5rltpzMzffPMNT01N8eLioszlcjw3N/frkydPxvxJ18jG5OTkYWZm13XdWtl+cxyHmZmnpqZ4cnKSl5eX+c6dO3J5eVl+9tlnP/LkNW3Ypjp669O9evXqLsMwngBARCRq+twVKgTy+Twsy4KmaSAiKhQKMh6P7+jt7T0IrHFVBoD77rvvqCdrTTRj5opnSSmxnFmGYRj+uG4kEqGtW7e+6HVv2gOaZYoA4P777z+s63q8dn1W6+v/TqfTUBQFqqpCSgkhBBMR2tvbXwRAnqtWdpaxsbFdhmH8EQAQ0ap17MtkZgghkM1lYRXL5EopwcyKaZrQdf1PRkZGtgkh3Gbn1iwB/NZbb2nRaPTPNuroW2hpaQm6rlc/V1ZWVljTtAOpVGoPEXEymRS+Djt27Diq63rUI3fdMRbvLEJVVShKmSchBBWLRRmPx7f39PQ863lLU16wIQG+hZ577rlewzB6vcys7ncVC2WzsCwLoVCo4rYAIKWU8Xg82N7efgwAhoaGBAA3lUoFYrHYn/pcNVRWCNi2jVw2i1AoVJbreQcRMTMjGo0e9fRrKiloxgMIAAzDeCEQCKgoH2zqur+PxcWyhYLB4Kr3XiyAYRj977zzThyAS0QcDof3GYbxQwBcG1uqxyEiLC8voeTYd9e/pwoRiZWVFTYM49GxsbE9RCSbCYbrdmBmEkK4p06d2hKNRg9VE1JXmBCwLAvZbBa6rkNRlFoCRKFQkIlEYteBAweeIiIGgI6OjmOKopCX+dWFxzmn00tQFRWBQGANua7rykgkYnR2djYdDDdiSDAz9u7d+4Su6ztQtti6FsrlciiVSpX1XyeFZSJiTdMGAeDKlStdoVDoGe/1miTG/97b+ymXy0PTtDXkerKpUCggFAodHh4ejgOQG8WCjQhgAGhra3teCAHXbXyk93JznpmZcX3395/XQDFNE0T0h8lkckd3d/cBTdM6aneWerrMzs46UjrQNA1CiHoEiGKx6IbD4d09PT1Peh627hwbvkwmk4KI5Pj4+O8ahvG4P8AqjTwFpJRSCIFisfjv8/Pz77S1tUFRFLdefPB2CSmE0Pbt2/eSruv9qL/1V8YQQqBUKs3fvHlzSNd16ZPbCKqqUjwe95fBusGwIQFDQ0MEAJ2dnUc0TYsBcNaxEAOAbdunb9y48ZZt2zIYDIpGBLiuq8zPz2Pbtm0/CwaDT3lu2iiHdwGgUCh8PD4+/k+O40xFIhFIKdlXx0+SPPn+dvvj0dHR3yMi6W23myNACOE+9thjqmEYLwCA67qN1j4riqJYlrU8NTX14eDg4IQQYiwajYKZ16wZIkKpVIJlWdi+fXsoGAxqUsp6SwUAoCgKMTMymcwvXnvttTwRjcTj8Qox9Uh2XddNJBLhzs7OI8BdYzZNwPDwsMLMePvtt/eFw+EfoLw9NRIivZPfBw899NAN72Bzmsobcy1ZICKYpglVVRGLxbg6T1gj2Ms5TNP8z8uXL7/vPTu5srJSBKA0XDeAsCwLhmEcTaVSAS8zbJ6A/v7ygWzbtm1HVVVVNghQJKXkdDp9CgCEEHzjxo0zi4uLi5qmrVLSzxJN00QsFoOu65VSVz3xfiHVNM3hY8eOZZlZffjhh3+Vz+evRKNRQoPaAhEJ0zRlKBTao+v6E1yuRNVdYmsI8I+mw8PD9xmG8VPvcd3tiZmloijCsqyJVCr1S2YmKaXy9NNPz9u2fS4cDoOZK0p6OwVs28aWLVsa8FmRz0IIxbZt69atW2d8EQC4UCi86+va6HspJRuGgUQi8SLKMaqut6whwD+l7d2795lQKNQhpZQbBb9MJvOLgYGBlSp5tLS09K+FQkF6z9iP5oVCAZqmIRaLYT33R9m6ZJrmWF9f32feZB1mps8///z9TCYzpeu6qCa4GkQk8vk8gsHgMx9++GGXlxmuGWwNAfv375cAEIlEBoC1+5MfcT3lRalUMmdnZ0/7r72yFEZGRi7ncrkvI5EIcdmtAACmaSKRSEBRFL+6uy5M0/wXlIkW/r5+5MiR+Vwud85Lh+taloioVCq5iUQisXv37sNA/WpR7b5ORCSvXbv2YCgUegIACyEabk9CCDJN83Jvb+/XvLrkLY4fP14qFAqnvPMAA+VSueu6aGtr85WsK9h3/0KhMDM2Nva+128VW+l0+oRpmrYQYr1EhxzHga7rLw4ODgb8I3hDAvy/u7q6ng8Gg4Zcx0S+8isrK6c85apnwwAwPT09kslkMqqqKkTExWIRmqYhHA5vZH0JAPl8/vyRI0fmpZSKf25AOb0V58+fHzdN86rnYXWjvBBC5PN51nX9D1555ZVHvBPjKoNWE0AA5JtvvmlEo9HDQOMgw8ySiBTLsn49OTn5XrXSHjmSmZVHH330W9M0fxmJRABAWpaFRCJRKWrWklmlOLmu68zPz/+ciHDmzJnqvgyAjh8/7mSz2dN+TWAduLFYDO3t7X9elyT/x/DwsBBC8KFDh/aGw+E9KBc9G7mX9A4+5x9//PFlZq620CrkcrkTtm1X7g42Cn5SSsnMwjTNX33yySdXpZQ0MDBQ6y4SAK5fv352eXl5vna7rYFfLfrpuXPnttSWzisT7O/vBzOjra3tmGeBhjm0oiiKbdtyYWHhlPeoXl/JzHTx4sWPcrncRCAQEJqmSb+MVQ8eMUxEWFpaOv3yyy/bqFPc8F15YGBg1jTN98LhMNDgsoWIyLIsN5FIbO/u7j5YO28BVA4+7sWLFztDodBPsE5hwhuITNO8mkwm/8MPnHUGZgDi1VdfzZZKpTNCCI5GozbKW1mloXwD5EgpHQC2EEKWSqV0LpcbAYChoaFGhmAASKfTP8/lclzmj516zRvTDofDz1d/e1eSFxhu3rz5l8zMruuuKXn7ZW/Hq0vfvn37rwDg0qVLDa/XPGIxOjq6J5vNcrNIp9PD1Xo1AjPT4OBgYHp6+gtm5lKpxI7jNGzFYpGvXbu2qnROviAiQjqd/re2trb9Xupb78aXFUWhYrG4ODo6+oMnn3xyzvu24XLxAp5YWFj422g0ultK6UopBVAuctTOCQDdunXrxIMPPniNN75NFkQkv/jii4O7du3640wm4/h61y4zKaWMxWLq7du3z/b09FysyPavqVKp1A9t2zaZWZbvJepeSjjMzAsLCyeqWfxOg+9eSf+D5/52I/cvv3bdb7/99se8zgGj0TibaJsilpnFJmSv3X7eeOONcD6fn/Bn2MD6LjOzaZrXk8mkiv+N+7d7AWamiYmJZ13XlcxcN/h5HmAzM8/MzPydZ/2gx/x3tsE34p07d04xM9e78PSsL5lZWpa1+PHHH++4tyb7n4V69uzZ3wmHw09xOZGqW8eDdxorFApf79y5Mz49Pf0IGhQjviMgKaX7wQcffE3T09N/s3379n9EeUIbBZ9m+nwXwMxMs7Ozr6iKovyFZVlwXZfqpf68+tDyfZg8pJRQFAVCiL9W8/n8s7ZtN3TnQqHw29TttwrHcTb9X2XfPySTyXu+Hd2rtt6FSQsttNBCCy200EIL33f8F6p4VqjzVlENAAAAAElFTkSuQmCC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -308,6 +311,20 @@
     margin: 0;
     line-height: 1.8;
   }
+  .ticker-split-line {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .ticker-split-line .ticker-plain:first-child { text-align: right; padding-right: 8px; }
+  .ticker-split-line .ticker-plain:last-child  { text-align: left;  padding-left: 8px; }
+  .ticker-split-line .ticker-sep { text-align: center; }
 
   .ticker-flair {
     color: var(--gold);
@@ -615,6 +632,15 @@
     letter-spacing: 0.08em;
   }
 
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-20px); }
@@ -774,7 +800,7 @@
     .client-logo-text { font-size: 1.2rem; }
 
     /* Ticker static — mobile layout */
-    .clients-ticker-static { padding: 0 20px; }
+    .clients-ticker-static { padding: 0; }
     .ticker-desktop { display: none; }
     .ticker-mobile { display: block; width: 100%; }
     .ticker-plain, .ticker-sep, .ticker-trusted { font-size: 0.85rem; }
@@ -1219,9 +1245,17 @@
     </div>
     <!-- Mobile: three lines, plain centered text -->
     <div class="ticker-mobile">
-      <p>KFC <span class="ticker-sep">●</span> TikTok</p>
+      <div class="ticker-split-line">
+        <span class="ticker-plain">KFC</span>
+        <span class="ticker-sep">●</span>
+        <span class="ticker-plain">TikTok</span>
+      </div>
       <p><span class="ticker-flair">✦</span> <span class="ticker-trusted">Trusted by Industry Leaders</span> <span class="ticker-flair">✦</span></p>
-      <p>Stake <span class="ticker-sep">●</span> Fashion Nova</p>
+      <div class="ticker-split-line">
+        <span class="ticker-plain">Stake</span>
+        <span class="ticker-sep">●</span>
+        <span class="ticker-plain">Fashion Nova</span>
+      </div>
     </div>
   </div>
 </div>
@@ -1296,7 +1330,7 @@
       <h2 class="section-title">Let's Work<br><span>Together</span></h2>
       <p class="contact-tagline">Ready to take your social media presence to the next level? Get in touch with us today and let's craft something extraordinary.</p>
       <div class="contact-socials">
-        <a href="https://instagram.com/mertymgmt" class="social-link" target="_blank">
+        <a href="https://instagram.com/mertymgmt" class="social-link" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
           Instagram
         </a>
@@ -1304,29 +1338,102 @@
       </div>
     </div>
 
-    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+    <form class="contact-form reveal" id="contactForm" novalidate>
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" name="fname" placeholder="John">
+          <input type="text" id="fname" name="fname" placeholder="John" required minlength="2" maxlength="50">
         </div>
         <div class="form-group">
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lname" placeholder="Doe">
+          <input type="text" id="lname" name="lname" placeholder="Doe" required minlength="2" maxlength="50">
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="john@company.com">
+        <input type="email" id="email" name="email" placeholder="john@company.com" required maxlength="254">
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+        <textarea id="message" name="message" placeholder="Tell us about your project..." required minlength="10" maxlength="2000"></textarea>
       </div>
-      <button type="submit" class="btn-submit">Let's Talk</button>
+      <input type="hidden" name="_subject" value="New Enquiry via Merty MGMT Website">
+      <input type="text" name="_gotcha" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" tabindex="-1" autocomplete="off">
+      <button type="button" class="btn-submit" onclick="handleFormSubmit()">Submit</button>
     </form>
   </div>
 </section>
+
+<!-- VALIDATION MODAL -->
+<div id="validationModal" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  align-items:center;
+  justify-content:center;
+  background:rgba(6,6,8,0.85);
+  backdrop-filter:blur(6px);
+  animation:fadeIn 0.2s ease;
+">
+  <div style="
+    background:#111116;
+    border:1px solid rgba(200,169,110,0.35);
+    max-width:420px;
+    width:90%;
+    padding:44px 40px;
+    position:relative;
+    animation:slideUp 0.25s ease;
+  ">
+    <button onclick="closeValidationModal()" style="
+      position:absolute;
+      top:16px;right:18px;
+      background:none;border:none;
+      color:#888880;font-size:1.2rem;
+      cursor:pointer;line-height:1;
+      transition:color 0.2s;
+    " onmouseover="this.style.color='#f5f2ec'" onmouseout="this.style.color='#888880'">✕</button>
+    <p style="
+      font-size:0.68rem;
+      letter-spacing:0.3em;
+      text-transform:uppercase;
+      color:#c8a96e;
+      margin-bottom:12px;
+      display:flex;align-items:center;gap:10px;
+    ">
+      <span style="display:inline-block;width:22px;height:1px;background:#c8a96e;"></span>
+      Before You Send
+    </p>
+    <h3 style="
+      font-family:'Bebas Neue',sans-serif;
+      font-size:2rem;
+      letter-spacing:0.06em;
+      color:#f5f2ec;
+      margin-bottom:20px;
+      line-height:1;
+    ">Please fix the<br>following</h3>
+    <ul id="validationList" style="
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:32px;
+    "></ul>
+    <button onclick="closeValidationModal()" style="
+      padding:13px 36px;
+      background:#c8a96e;
+      color:#060608;
+      border:none;
+      font-family:'Outfit',sans-serif;
+      font-size:0.78rem;
+      font-weight:600;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:background 0.2s;
+    " onmouseover="this.style.background='#e2c98a'" onmouseout="this.style.background='#c8a96e'">Go Back & Fix</button>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -1335,6 +1442,9 @@
 </footer>
 
 <script>
+  // Clickjacking protection — prevent site being loaded in an iframe
+  try { if (top !== self) { top.location = self.location; } } catch(e) {}
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
@@ -1346,28 +1456,91 @@
 
   document.querySelectorAll('.reveal, .stagger-children').forEach(el => observer.observe(el));
 
-  // Form handler
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-submit');
-    const fname = document.getElementById('fname').value;
-    const lname = document.getElementById('lname').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+  // ── FORM VALIDATION + AJAX SUBMIT ──
+  function closeValidationModal() {
+    document.getElementById('validationModal').style.display = 'none';
+  }
 
-    const subject = encodeURIComponent(`New Enquiry from ${fname} ${lname}`);
-    const body = encodeURIComponent(`Name: ${fname} ${lname}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:contact@merty.biz?subject=${subject}&body=${body}`;
+  document.getElementById('validationModal').addEventListener('click', function(e) {
+    if (e.target === this) closeValidationModal();
+  });
 
-    btn.textContent = 'Opening Email ✓';
-    btn.style.background = '#2a7a5a';
-    btn.style.color = '#fff';
-    setTimeout(() => {
-      btn.textContent = "Let's Talk";
-      btn.style.background = '';
-      btn.style.color = '';
-      e.target.reset();
-    }, 3000);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeValidationModal();
+  });
+
+  function showModal(errors) {
+    document.getElementById('validationList').innerHTML = errors.map(err =>
+      `<li style="display:flex;align-items:flex-start;gap:12px;font-size:0.88rem;color:#f5f2ec;padding:12px 16px;background:rgba(200,169,110,0.06);border-left:2px solid #c8a96e;">
+        <span style="color:#c8a96e;flex-shrink:0;">—</span>${err}
+      </li>`
+    ).join('');
+    document.getElementById('validationModal').style.display = 'flex';
+  }
+
+  function handleFormSubmit() {
+    const fname   = document.getElementById('fname').value.trim();
+    const lname   = document.getElementById('lname').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const errors = [];
+    if (fname.length < 2)             errors.push('First name must be at least 2 characters');
+    if (lname.length < 2)             errors.push('Last name must be at least 2 characters');
+    if (!email)                       errors.push('Email address is required');
+    else if (!emailRegex.test(email)) errors.push('Please enter a valid email address (e.g. john@company.com)');
+    if (message.length < 10)          errors.push('Message must be at least 10 characters');
+
+    if (errors.length > 0) {
+      showModal(errors);
+      return;
+    }
+
+    // All valid — send via fetch
+    const btn = document.querySelector('.btn-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    btn.style.opacity = '0.6';
+    btn.style.cursor = 'not-allowed';
+
+    const formData = new FormData();
+    formData.append('fname', fname);
+    formData.append('lname', lname);
+    formData.append('email', email);
+    formData.append('message', message);
+    formData.append('_subject', 'New Enquiry via Merty MGMT Website');
+
+    fetch('https://formspree.io/f/xojkaykw', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(res => {
+      if (res.ok) {
+        btn.textContent = 'Sent ✓';
+        btn.style.background = '#2a7a5a';
+        btn.style.color = '#fff';
+        btn.style.opacity = '1';
+        document.getElementById('contactForm').reset();
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = 'Submit';
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.cursor = '';
+        }, 3000);
+      } else {
+        throw new Error('Server error');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.textContent = 'Submit';
+      btn.style.opacity = '1';
+      btn.style.cursor = '';
+      showModal(['Something went wrong. Please try again or email us directly at contact@merty.biz']);
+    });
   }
 
   // Follower counter — slides old number out up, new number in from below
