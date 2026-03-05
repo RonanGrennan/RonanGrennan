@@ -832,13 +832,7 @@
         <style>
           @keyframes drawLine { from{stroke-dashoffset:260} to{stroke-dashoffset:0} }
           @keyframes barRise  { from{transform:scaleY(0)} to{transform:scaleY(1)} }
-          @keyframes numFlip  {
-            0%   {opacity:0;transform:translateY(5px)}
-            5%   {opacity:1;transform:translateY(0)}
-            28%  {opacity:1;transform:translateY(0)}
-            33%  {opacity:0;transform:translateY(-5px)}
-            100% {opacity:0;transform:translateY(-5px)}
-          }
+          
           @keyframes floatUp {
             0%  {opacity:0;transform:translateY(0) scale(.5)}
             18% {opacity:1;transform:translateY(-10px) scale(1)}
@@ -882,9 +876,7 @@
           .ping-ring { animation: ping    2s ease-out     infinite .4s; transform-origin:355px 147px; }
           .ping-dot  { animation: pingDot 2s ease-in-out  infinite .4s; transform-origin:355px 147px; }
           .arrow-up  { animation: arrowBounce 1.7s ease-in-out infinite; transform-origin:298px 260px; }
-          .n1 { animation: numFlip 3s ease-in-out infinite 0s; opacity: 0; }
-          .n2 { animation: numFlip 3s ease-in-out infinite 1s; opacity: 0; }
-          .n3 { animation: numFlip 3s ease-in-out infinite 2s; opacity: 0; }
+          
           .bar { transform-origin:0 100%; animation: barRise 1.3s cubic-bezier(.4,0,.2,1) both; }
           .b1{animation-delay:.05s} .b2{animation-delay:.18s} .b3{animation-delay:.31s}
           .b4{animation-delay:.44s} .b5{animation-delay:.57s} .b6{animation-delay:.70s} .b7{animation-delay:.83s}
@@ -928,9 +920,7 @@
             <!-- Follower block -->
             <rect x="242" y="140" width="112" height="44" fill="#0e0c1a"/>
             <text x="298" y="153" text-anchor="middle" font-size="6" fill="#c8a96e" opacity=".45" font-family="Outfit,sans-serif" letter-spacing="2">FOLLOWERS</text>
-            <text class="n1" x="298" y="172" text-anchor="middle" font-size="16" fill="#c8a96e" font-family="'Bebas Neue',sans-serif" letter-spacing="1.5">284,910</text>
-            <text class="n2" x="298" y="172" text-anchor="middle" font-size="16" fill="#c8a96e" font-family="'Bebas Neue',sans-serif" letter-spacing="1.5" style="animation-delay:1s">285,247</text>
-            <text class="n3" x="298" y="172" text-anchor="middle" font-size="16" fill="#c8a96e" font-family="'Bebas Neue',sans-serif" letter-spacing="1.5" style="animation-delay:2s">285,614</text>
+            <text id="follower-count" x="298" y="172" text-anchor="middle" font-size="16" fill="#c8a96e" font-family="'Bebas Neue',sans-serif" letter-spacing="1.5">284,910</text>
             <text x="298" y="181" text-anchor="middle" font-size="6" fill="#6ecfa8" font-family="Outfit,sans-serif">&#9650; +2,847 this week</text>
             <!-- Line chart -->
             <rect x="242" y="184" width="112" height="62" fill="#0c0a14"/>
@@ -1327,7 +1317,19 @@
     }, 3000);
   }
 
-  // Hamburger menu
+  // Follower counter — ticks up continuously, never resets
+  (function() {
+    const el = document.getElementById('follower-count');
+    if (!el) return;
+    let count = 284910;
+    // Tick up by a random 1-4 every 300-800ms for organic feel
+    function tick() {
+      count += Math.floor(Math.random() * 4) + 1;
+      el.textContent = count.toLocaleString('en-US');
+      setTimeout(tick, Math.floor(Math.random() * 500) + 300);
+    }
+    tick();
+  })();
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => {
