@@ -297,10 +297,7 @@
     align-items: center;
     gap: 18px;
   }
-  .ticker-mobile {
-    display: none;
-    align-items: center;
-  }
+  .ticker-mobile { display: none; }
   .ticker-mobile-row {
     display: flex;
     align-items: center;
@@ -308,16 +305,10 @@
     gap: 12px;
     width: 260px;
   }
-  .ticker-mobile-row.ticker-row-sides {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    width: 260px;
-    gap: 12px;
+  .ticker-mobile-row.ticker-row-sides .ticker-plain {
+    width: 100px;
+    text-align: center;
   }
-  .ticker-mobile-row.ticker-row-sides .ticker-plain:first-child { text-align: right; }
-  .ticker-mobile-row.ticker-row-sides .ticker-plain:last-child { text-align: left; }
-  .ticker-mobile-row.ticker-row-sides .ticker-sep { text-align: center; }
 
   .ticker-flair {
     color: var(--gold);
