@@ -304,13 +304,17 @@
     justify-content: center;
     gap: 12px;
   }
-  .ticker-mobile-row.ticker-row-center {
+  .ticker-mobile-row.ticker-row-sides {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
     gap: 12px;
   }
-  .ticker-mobile-row:not(.ticker-row-center) .ticker-plain {
-    min-width: 90px;
-    text-align: center;
-  }
+  .ticker-mobile-row.ticker-row-sides .ticker-plain:first-child { text-align: right; }
+  .ticker-mobile-row.ticker-row-sides .ticker-plain:last-child { text-align: left; }
+  .ticker-mobile-row.ticker-row-sides .ticker-sep { text-align: center; }
 
   .ticker-flair {
     color: var(--gold);
@@ -1222,18 +1226,17 @@
     </div>
     <!-- Mobile: three rows -->
     <div class="ticker-mobile">
-      <div class="ticker-mobile-row">
+      <div class="ticker-mobile-row ticker-row-sides">
         <span class="ticker-plain">KFC</span>
         <span class="ticker-sep">●</span>
         <span class="ticker-plain">TikTok</span>
-        
       </div>
       <div class="ticker-mobile-row ticker-row-center">
         <span class="ticker-flair">✦</span>
         <span class="ticker-trusted">Trusted by Industry Leaders</span>
         <span class="ticker-flair">✦</span>
       </div>
-      <div class="ticker-mobile-row">
+      <div class="ticker-mobile-row ticker-row-sides">
         <span class="ticker-plain">Stake</span>
         <span class="ticker-sep">●</span>
         <span class="ticker-plain">Fashion Nova</span>
